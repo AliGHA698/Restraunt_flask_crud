@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Search Order By ID</h2>
+
+<form method="post">
+
+    <input
+        type="number"
+        name="id"
+        placeholder="Order ID">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<hr>
+
+{% if order %}
+
+<p>Order ID: {{ order.id }}</p>
+
+<p>
+    Customer:
+    {{ order.customer.customer_name }}
+    {{ order.customer.customer_family }}
+</p>
+
+<p>
+    Food:
+    {{ order.food.food_name }}
+</p>
+
+{% endif %}
+
+{% endblock %}

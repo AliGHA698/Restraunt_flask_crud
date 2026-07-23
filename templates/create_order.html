@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Create Order</h2>
+
+<form method="post">
+
+    <label>Customer:</label>
+
+    <select name="customer_id">
+
+        {% for customer in customers %}
+
+        <option value="{{customer.id}}">
+
+            {{customer.id}} -
+            {{customer.customer_name}}
+            {{customer.customer_family}}
+
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+    <br><br>
+
+    <label>Food:</label>
+
+    <select name="food_id">
+
+        {% for food in foods %}
+
+        <option value="{{food.id}}">
+            {{food.id}} -
+            {{food.food_name}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Create Order
+    </button>
+
+</form>
+
+{% endblock %}

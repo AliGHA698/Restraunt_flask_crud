@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Restaurant Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1>Restaurant Management System</h1>
+
+<ul>
+    <li><a href="{{ url_for('cooks') }}">Cooks</a></li>
+     <li><a href="{{ url_for('customers') }}">Customers</a></li>
+     <li><a href="{{ url_for('foods') }}">Foods</a></li>
+    <li><a href="{{ url_for('orders') }}">Orders</a></li>
+    <li><a href="{{ url_for('chefs') }}">Chefs</a></li>
+    <li><a href="{{ url_for('cooking_staff') }}">cooking_staff</a></li>
+
+</ul>
+
+{% endblock %}

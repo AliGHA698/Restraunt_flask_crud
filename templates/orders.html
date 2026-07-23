@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Orders</h1>
+
+<a href="{{ url_for('create_order') }}">
+    Add Order
+</a>
+
+<br></br>
+
+<a href="{{ url_for('search_order') }}">
+    Search Order
+</a>
+
+<hr>
+
+{% for order in orders %}
+
+<p>
+
+    Order ID: {{ order.id }}
+
+
+
+    Customer:
+    {{ order.customer.customer_name }}
+    {{ order.customer.customer_family }}
+
+    has ordered the
+
+    Food:
+    {{ order.food.food_name }}
+
+    <br></br>
+
+    <a href="/order/delete/{{order.id}}">
+        Delete
+    </a>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

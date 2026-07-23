@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Foods</h1>
+
+<a href="{{ url_for('create_food') }}">
+    Add Food
+</a>
+
+<br></br>
+
+<a href="{{ url_for('search_food') }}">
+    Search Food
+</a>
+
+<hr>
+
+{% for food in foods %}
+
+<p>
+
+    ID: {{ food.id }}
+
+    -
+
+    {{ food.food_name }}
+<br></br>
+    <a href="/food/update/{{food.id}}">
+        Edit
+    </a>
+<br></br>
+    <a href="/food/delete/{{food.id}}">
+        Delete
+    </a>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

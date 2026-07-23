@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Update Chef</h2>
+
+<form method="post">
+
+    <input type="text" name="name" value="{{ chef.chef_name }}">
+    <br><br>
+
+    <input type="text" name="family" value="{{ chef.chef_family }}">
+    <br><br>
+
+    <button type="submit">Update</button>
+
+</form>
+
+{% endblock %}

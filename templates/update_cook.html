@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post">
+
+    <input
+        type="text"
+        name="name"
+        value="{{cook.cook_name}}">
+
+    <br><br>
+
+    <input
+        type="text"
+        name="family"
+        value="{{cook.cook_family}}">
+
+    <br><br>
+
+    <button type="submit">
+        Update
+    </button>
+
+</form>
+
+{% endblock %}

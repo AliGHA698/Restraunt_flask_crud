@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Cooking Staff</h1>
+
+<a href="{{ url_for('create_cooking_staff') }}">
+    Add Staff
+</a>
+
+<br></br>
+<a href="{{ url_for('search_cooking_staff') }}">
+    Search Staff
+</a>
+
+<hr>
+
+{% for s in staff %}
+
+<p>
+   Cooking staff :
+    ID: {{ s.id }}
+    is --->
+    Chef: {{ s.chef.chef_name }} {{ s.chef.chef_family }}
+    and
+    Cook: {{ s.cook.cook_name }} {{ s.cook.cook_family }}
+    <br></br>
+    <a href="/cooking-staff/delete/{{s.id}}">
+        Delete
+    </a>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

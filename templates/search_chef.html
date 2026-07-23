@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Search Chef By ID</h2>
+
+<form method="post">
+
+    <input type="number" name="id" placeholder="Chef ID">
+
+    <button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+{% if chef %}
+
+<p>ID: {{ chef.id }}</p>
+<p>Name: {{ chef.chef_name }}</p>
+<p>Family: {{ chef.chef_family }}</p>
+
+{% endif %}
+
+{% endblock %}

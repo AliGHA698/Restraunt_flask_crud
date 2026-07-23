@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Customers</h1>
+
+<a href="{{ url_for('create_customer') }}">
+    Add Customer
+</a>
+
+<br></br>
+
+<a href="{{ url_for('search_customer') }}">
+    Search Customer
+</a>
+
+<hr>
+
+{% for customer in customers %}
+
+<p>
+
+    {{ customer.id }}
+    -
+    {{ customer.customer_name }}
+    {{ customer.customer_family }}
+    <br></br>
+
+    <a href="/customer/update/{{customer.id}}">
+        Edit
+    </a>
+    <br></br>
+    <a href="/customer/delete/{{customer.id}}">
+        Delete
+    </a>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

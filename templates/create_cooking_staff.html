@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Create Cooking Staff</h2>
+
+<form method="post">
+
+    <label>Chef:</label>
+    <select name="chef_id">
+
+        {% for chef in chefs %}
+        <option value="{{chef.id}}">
+            {{chef.id}} - {{chef.chef_name}}
+        </option>
+        {% endfor %}
+
+    </select>
+
+    <br><br>
+
+    <label>Cook:</label>
+    <select name="cook_id">
+
+        {% for cook in cooks %}
+        <option value="{{cook.id}}">
+            {{cook.id}} - {{cook.cook_name}}
+        </option>
+        {% endfor %}
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search Cook
+{% endblock %}
+
+{% block content %}
+
+<h2>Search Cook By ID</h2>
+
+<form method="post">
+
+    <input
+        type="number"
+        name="id"
+        placeholder="Cook ID"
+        required>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<hr>
+
+{% if cook %}
+
+    <h3>Cook Found</h3>
+
+    <p>ID: {{ cook.id }}</p>
+    <p>Name: {{ cook.cook_name }}</p>
+    <p>Family: {{ cook.cook_family }}</p>
+
+{% endif %}
+
+{% endblock %}

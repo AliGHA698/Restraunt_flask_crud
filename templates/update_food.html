@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Update Food</h2>
+
+<form method="post">
+
+    <input
+        type="text"
+        name="name"
+        value="{{ food.food_name }}">
+
+    <br><br>
+
+    <button type="submit">
+        Update
+    </button>
+
+</form>
+
+{% endblock %}

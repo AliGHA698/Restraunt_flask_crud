@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Chefs</h1>
+
+<a href="{{ url_for('create_chef') }}">Add Chef</a>
+<br></br>
+<a href="{{ url_for('search_chef') }}">Search Chef</a>
+
+<hr>
+
+{% for chef in chefs %}
+
+<p>
+
+    ID: {{ chef.id }}
+    :
+    {{ chef.chef_name }}
+    {{ chef.chef_family }}
+
+    <a href="/chef/update/{{chef.id}}">Edit</a>
+    <br></br>
+    <a href="/chef/delete/{{chef.id}}">Delete</a>
+     <br></br>
+
+</p>
+
+{% endfor %}
+
+{% endblock %}

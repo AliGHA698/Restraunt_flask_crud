@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Search Food By ID</h2>
+
+<form method="post">
+
+    <input
+        type="number"
+        name="id"
+        placeholder="Food ID">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<hr>
+
+{% if food %}
+
+<p>ID: {{ food.id }}</p>
+<p>Food: {{ food.food_name }}</p>
+
+{% endif %}
+
+{% endblock %}

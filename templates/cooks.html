@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cooks
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('search_cook') }}" method="post">
+
+    <input
+        type="number"
+        name="id"
+        placeholder="Enter Cook ID">
+
+    <button type="submit">
+        Search</button>
+
+</form>
+
+<hr>
+
+<a href="/cook/create">Add Cook</a>
+
+<hr>
+
+{% for cook in cooks %}
+
+<h3>
+    {{ cook.cook_name }}
+    {{ cook.cook_family }}
+</h3>
+
+<a href="/cook/update/{{cook.id}}">
+    Edit
+</a><br></br>
+
+<a href="/cook/delete/{{cook.id}}">
+    Delete
+</a>
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}
